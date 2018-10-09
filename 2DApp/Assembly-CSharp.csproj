@@ -53,9 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Flick\FlickTest.cs" />
+     <Compile Include="Assets\Script\Manager\SettingManager.cs" />
      <Compile Include="Assets\Script\Manager\TitleManager.cs" />
      <Compile Include="Assets\Script\SceneChange\NextScene.cs" />
      <Compile Include="Assets\Script\SceneChange\SceneObject.cs" />
+     <Compile Include="Assets\Script\Sound\MixerManager.cs" />
      <Compile Include="Assets\UniAndroidPermission\UniAndroidPermission.cs" />
      <None Include="Assets\UniAndroidPermission\AndroidManifest-uniRP.xml" />
  <Reference Include="UnityEditor.StandardEvents">
@@ -310,6 +313,10 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E7CE106E-9968-AF99-DD90-904C9DFDC733}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

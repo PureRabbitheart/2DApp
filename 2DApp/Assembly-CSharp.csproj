@@ -56,6 +56,7 @@
      <Compile Include="Assets\Script\Flick\FlickTest.cs" />
      <Compile Include="Assets\Script\Manager\SettingManager.cs" />
      <Compile Include="Assets\Script\Manager\TitleManager.cs" />
+     <Compile Include="Assets\Script\Player\PlayerManager.cs" />
      <Compile Include="Assets\Script\SceneChange\NextScene.cs" />
      <Compile Include="Assets\Script\SceneChange\SceneObject.cs" />
      <Compile Include="Assets\Script\Sound\MixerManager.cs" />

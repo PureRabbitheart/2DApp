@@ -6,50 +6,61 @@ using UnityEngine.UI;
 
 public class FlickTest : MonoBehaviour
 {
-    private Vector3 touchStartPos;
-    private Vector3 touchEndPos;
-    private Vector3 startPosition;
-    private Vector3 endPosition;
-    private float startTime;
+    private Vector3 vTouchStartPos;//タップした位置
+    private Vector3 vTouchEndPos;//画面を離した位置
+    private Vector3 vStartPos;//移動時の最初の位置
+    private Vector3 vEndPos;//移動目標
+    private float fNowTime;//移動時間
 
     [SerializeField]
-    private LayerMask BackGround;
-    [SerializeField, Range(0, 1)]
-    float time = 0.5f;
+    private GameManager pGameManager;//GameManagerのポインタ
     [SerializeField]
-    private GameObject player;
+    private LayerMask BackGround;//BackGroundのレイヤー管理
+    [SerializeField, Range(0, 1)]
+    float fMoveTime = 0.5f;//移動時間
+    [SerializeField]
+    private GameObject gPlayer;//プレイヤーのオブジェクト
 
     void Start()
     {
-        startPosition = player.transform.position;
-        endPosition = player.transform.position;
+        vStartPos = gPlayer.transform.position;
+        vEndPos = gPlayer.transform.position;
 
     }
 
     void Update()
     {
-        Flick();
-        Move();
+        if (pGameManager.eGameMode == GameManager.GAMEMODE.Game)
+        {
+            Flick();//フリック処理
+            Move();//移動処理
+        }
+        else
+        {
+            vTouchStartPos = new Vector3(0, 0, 0);
+            vTouchEndPos = new Vector3(0, 0, 0);
+        }
+
     }
 
-    void Flick()
+    void Flick()//フリック処理
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            touchStartPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+            vTouchStartPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            touchEndPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+            vTouchEndPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             GetDirection();
         }
     }
 
     void GetDirection()
     {
-        float directionX = touchEndPos.x - touchStartPos.x;
-        float directionY = touchEndPos.y - touchStartPos.y;
+        float directionX = vTouchEndPos.x - vTouchStartPos.x;
+        float directionY = vTouchEndPos.y - vTouchStartPos.y;
         string Direction = null;
 
         if (Mathf.Abs(directionY) < Mathf.Abs(directionX))
@@ -118,59 +129,41 @@ public class FlickTest : MonoBehaviour
     }
 
 
-    void RayHit(Vector2 vPos)
+    void RayHit(Vector2 vPos)//フリックした時にRayを出して次行く位置を決める
     {
 
-        RaycastHit2D hit = Physics2D.Raycast(player.transform.position, vPos, 100, BackGround);
-        Debug.DrawRay(player.transform.position, new Vector3(0, 0, 100), Color.blue, 1);// 可視化
+        RaycastHit2D hit = Physics2D.Raycast(gPlayer.transform.position, vPos, 100, BackGround);
+        Debug.DrawRay(gPlayer.transform.position, new Vector3(0, 0, 100), Color.blue, 1);// 可視化
 
-        //なにかと衝突した時だけそのオブジェクトの名前をログに出す
         if (hit.collider)
         {
-            endPosition = new Vector3(hit.point.x - vPos.x, hit.point.y - vPos.y, 0.0f);
+            vEndPos = new Vector3(hit.point.x - vPos.x, hit.point.y - vPos.y, 0.0f);//目標地点を決定
         }
 
     }
 
 
-    void MoveInit()
+    void MoveInit()//移動時の初期化
     {
-        if (time <= 0)
+        if (fMoveTime <= 0)
         {
-            transform.position = endPosition;
+            transform.position = vEndPos;
         }
 
-        startTime = Time.timeSinceLevelLoad;
-        startPosition = player.transform.position;
+        fNowTime = 0.0f;
+        vStartPos = gPlayer.transform.position;
     }
 
-    void Move()
+    void Move()//移動処理
     {
-        var diff = Time.timeSinceLevelLoad - startTime;
-        if (diff > time)
+        fNowTime += Time.deltaTime;
+
+        if (fNowTime > fMoveTime)
         {
-            player.transform.position = endPosition;
+            gPlayer.transform.position = vEndPos;
         }
 
-        var rate = diff / time;
-        player.transform.position = Vector3.Lerp(startPosition, endPosition, rate);
-    }
-
-    void OnDrawGizmosSelected()
-    {
-#if UNITY_EDITOR
-
-        if (!UnityEditor.EditorApplication.isPlaying || enabled == false)
-        {
-            startPosition = player.transform.position;
-        }
-
-        UnityEditor.Handles.Label(endPosition, endPosition.ToString());
-        UnityEditor.Handles.Label(startPosition, startPosition.ToString());
-#endif
-        Gizmos.DrawSphere(endPosition, 0.1f);
-        Gizmos.DrawSphere(startPosition, 0.1f);
-
-        Gizmos.DrawLine(startPosition, endPosition);
+        float rate = fNowTime / fMoveTime;
+        gPlayer.transform.position = Vector3.Lerp(vStartPos, vEndPos, rate);
     }
 }

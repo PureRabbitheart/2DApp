@@ -104,25 +104,25 @@ public class TitleManager : MonoBehaviour
 
     public void JapaneseSet()//日本語設定
     {
+        PlayerPrefs.SetString("Language", "Japanese");//言語設定
         LanguageChange();
     }
 
     public void EnglishSet()//英語設定
     {
+        PlayerPrefs.SetString("Language", "English");//言語設定
         LanguageChange();
     }
 
     void LanguageChange()
     {
-        int count = 0;
-
         foreach (GameObject obj in UnityEngine.Resources.FindObjectsOfTypeAll(typeof(GameObject)))
         {
-            if(obj.GetComponent<LanguageManager>() != null)
+            var tmp =obj.GetComponent<LanguageManager>();
+            if (tmp != null)
             {
-                count++;
+                tmp.LanguageChange();
             }
         }
-        Debug.Log(count);
     }
 }

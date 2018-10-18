@@ -38,4 +38,28 @@ public class SettingManager : MonoBehaviour
         BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
         SESlider.value = PlayerPrefs.GetFloat("SEVolume");
     }
+
+    public void JapaneseSet()//日本語設定
+    {
+        PlayerPrefs.SetString("Language", "Japanese");//言語設定
+        LanguageChange();
+    }
+
+    public void EnglishSet()//英語設定
+    {
+        PlayerPrefs.SetString("Language", "English");//言語設定
+        LanguageChange();
+    }
+
+    void LanguageChange()
+    {
+        foreach (GameObject obj in UnityEngine.Resources.FindObjectsOfTypeAll(typeof(GameObject)))
+        {
+            var tmp = obj.GetComponent<LanguageManager>();
+            if (tmp != null)
+            {
+                tmp.LanguageChange();
+            }
+        }
+    }
 }

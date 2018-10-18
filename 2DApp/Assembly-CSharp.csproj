@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\Flick\FlickTest.cs" />
      <Compile Include="Assets\Script\Language\LanguageManager.cs" />
+     <Compile Include="Assets\Script\Manager\GachaManager.cs" />
      <Compile Include="Assets\Script\Manager\GameManager.cs" />
      <Compile Include="Assets\Script\Manager\SelectManager.cs" />
      <Compile Include="Assets\Script\Manager\SettingManager.cs" />

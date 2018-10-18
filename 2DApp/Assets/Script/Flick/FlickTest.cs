@@ -32,6 +32,7 @@ public class FlickTest : MonoBehaviour
     {
         if (pGameManager.eGameMode == GameManager.GAMEMODE.Game)
         {
+
             Flick();//フリック処理
             Move();//移動処理
         }

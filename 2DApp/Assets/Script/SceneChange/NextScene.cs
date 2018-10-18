@@ -11,30 +11,20 @@ public class NextScene : MonoBehaviour
     [SerializeField]
     private SceneObject TitleSceneObject;
     [SerializeField]
-    private SceneObject MainSceneObject;
+    private SceneObject[] StageSceneObject;
     [SerializeField]
     private SceneObject SettingSceneObject;
     [SerializeField]
     private SceneObject SelectSceneObject;
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void TitleScene()//タイトルシーン遷移
     {
         LoadScene(TitleSceneObject.name(), 0.0f);
     }
-    public void MainScene()//メインシーン遷移
+    public void StageScene(int StageNum)//メインシーン遷移
     {
-        LoadScene(MainSceneObject, 0.0f);
+        LoadScene(StageSceneObject[StageNum - 1], 0.0f);
     }
     public void SettingScene()//設定シーン遷移
     {

@@ -7,6 +7,8 @@ Assets/Scenes/Setting.unity
 Assets/Scenes/StageSelect.unity
 Assets/Scenes/Stage/Stage1.unity
 Assets/Scenes/Stage/Stage2.unity
+Assets/Scenes/Gacha.unity
+Assets/Scenes/GachaPerformance.unity
 SceneListEnd?
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 7b803eb2910e9b4cd5e521ae07b9f7d6 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -120,7 +122,7 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 c7596548f833c0a2bf641cb4985f0213 Assembly-CSharp.dll:.MixerManager
 ad4fb883abfa6855ede4cf63ccbba3ee Assembly-CSharp.dll:.LanguageManager
-401a3710eda073271d44018f00c90e61 Assembly-CSharp.dll:.NextScene
+2aa0a05f178e39b2dc67e2af4dc15949 Assembly-CSharp.dll:.NextScene
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 d22c788799ee45d8676254eccf20e8b8 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -136,6 +138,7 @@ f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 05bb118426121c4158e38d23440d3bfa Assembly-CSharp.dll:.GameManager
+eedd9b4b84417c90f64056ef5fdc7648 Assembly-CSharp.dll:.GachaManager
 d46ff438a1ca98fdcc0485294cc3aa44 Assembly-CSharp.dll:.FlickTest
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -179,3 +182,4 @@ e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
+13f7169d7b87367100a5aa5193f8335b Assembly-CSharp.dll:.GachaPerfomanceManager

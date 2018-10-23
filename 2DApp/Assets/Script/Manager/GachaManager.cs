@@ -13,6 +13,7 @@ public class GachaManager : MonoBehaviour
         Pickup,//ピックアップ詳細
         Confirmation,//確認画面
         Gacha,//ガチャ
+        GachaNG,//ガチャ引けない時
     }
 
     public SCENEMODE eSceneMode;
@@ -20,14 +21,23 @@ public class GachaManager : MonoBehaviour
     [SerializeField]
     private GameObject gGachaConfirmation;//ガチャの確認画面
     [SerializeField]
-    private TextMeshProUGUI[] LemonValue = new TextMeshProUGUI[2];
+    private GameObject gGachaNG;//レモンが足りない時
     [SerializeField]
-    private TextMeshProUGUI NextLemonValue;
+    private TextMeshProUGUI[] LemonValue = new TextMeshProUGUI[2];//現在のレモンの数を出すText
     [SerializeField]
-    private int OneGachaLemon;
+    private TextMeshProUGUI NextLemonValue;//ガチャ引いた後にレモンの数を出すText
+    [SerializeField]
+    private int oneGachaLemon;//一回引くのに使うレモンの数
+    [SerializeField]
+    private NextScene pNextScene;
+
+    private int nextLemonValue;//ガチャ引いた後に残るレモンの数
+    private bool isGachaPull;
+
     // Use this for initialization
     void Start()
     {
+        PlayerPrefs.SetInt("Lemon", 5);
         LemonValueUpdate();
     }
 
@@ -35,6 +45,7 @@ public class GachaManager : MonoBehaviour
     void Update()
     {
         ConfirmationUIActive();
+        GahaNGUIActive();
     }
 
     void ConfirmationUIActive()//言語設定UIの管理処理
@@ -43,9 +54,13 @@ public class GachaManager : MonoBehaviour
         {
             gGachaConfirmation.SetActive(true);
         }
-        else
+
+    }
+    void GahaNGUIActive()//レモンが足りない時の確認画面
+    {
+        if (eSceneMode == SCENEMODE.GachaNG)
         {
-            gGachaConfirmation.SetActive(false);
+            gGachaNG.SetActive(true);
         }
     }
     public void GachaCheck(int value)//ガチャボタンを押したら
@@ -58,11 +73,13 @@ public class GachaManager : MonoBehaviour
     public void Cancel()//キャンセルボタンを押したら
     {
         eSceneMode = SCENEMODE.Menu;
+        gGachaConfirmation.SetActive(false);
+
     }
 
-    void LemonValueUpdate()
+    void LemonValueUpdate()//今持っているレモンの数を表示する
     {
-        int lemonValue = PlayerPrefs.GetInt("Lemons");
+        int lemonValue = PlayerPrefs.GetInt("Lemon");
         for (int i = 0; i < LemonValue.Length; i++)
         {
             LemonValue[i].text = "× " + lemonValue.ToString();
@@ -71,13 +88,41 @@ public class GachaManager : MonoBehaviour
 
     void NextLemonValueUpdate(int value)//ガチャ引いた後に残るレモンの数
     {
-        int lemonValue = PlayerPrefs.GetInt("Lemons");
-        lemonValue -= value * OneGachaLemon;
-        if (lemonValue < 0)
+        nextLemonValue = PlayerPrefs.GetInt("Lemon");
+        nextLemonValue -= value * oneGachaLemon;
+        if (nextLemonValue < 0)//ガチャ引こうとしてレモンが0以下になった時
         {
-            lemonValue = 0;
+            nextLemonValue = 0;
+            isGachaPull = false;
         }
-        NextLemonValue.text = "× " + lemonValue.ToString();
+        else
+        {
+            isGachaPull = true;
+        }
+        NextLemonValue.text = "× " + nextLemonValue.ToString();
     }
 
+    public void GachaPull()//ガチャを引くボタンを押したらの処理
+    {
+        if (isGachaPull == true)//ガチャ引けるとき
+        {
+            int lemonValue = PlayerPrefs.GetInt("Lemon");
+            int GachaValue = (lemonValue - nextLemonValue) / oneGachaLemon;//何回引くか計算で算出
+            PlayerPrefs.SetInt("Lemon", nextLemonValue);//持っているレモンの数を減らす   
+
+            pNextScene.PerfomanceScene();
+        }
+        else//ガチャ引けない時
+        {
+            eSceneMode = SCENEMODE.GachaNG;
+        }
+
+    }
+
+    public void GachaNGClose()//レモンが足りない時の確認画面を閉じるボタンを押したときの処理
+    {
+        eSceneMode = SCENEMODE.Gacha;
+        gGachaNG.SetActive(false);
+
+    }
 }

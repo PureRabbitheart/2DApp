@@ -16,7 +16,10 @@ public class NextScene : MonoBehaviour
     private SceneObject SettingSceneObject;
     [SerializeField]
     private SceneObject SelectSceneObject;
-
+    [SerializeField]
+    private SceneObject GachaSceneObject;
+    [SerializeField]
+    private SceneObject GachaPerfomanceSceneObject;
 
     public void TitleScene()//タイトルシーン遷移
     {
@@ -33,6 +36,15 @@ public class NextScene : MonoBehaviour
     public void SelectScene()//セレクトシーン遷移
     {
         LoadScene(SelectSceneObject, 0.0f);
+    }
+    public void GachaScene()//ガチャシーン遷移
+    {
+        LoadScene(GachaSceneObject, 0.0f);
+    }
+
+    public void PerfomanceScene()//ガチャシーン遷移
+    {
+        LoadScene(GachaPerfomanceSceneObject, 0.0f);
     }
 
     public void LoadScene(string scene, float interval)

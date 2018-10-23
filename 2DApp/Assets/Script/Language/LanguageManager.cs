@@ -18,7 +18,6 @@ public class LanguageManager : MonoBehaviour
     public void LanguageChange()//言語の切り替え
     {
         string language = PlayerPrefs.GetString("Language");
-        Debug.Log(language);
         switch(language)//どの言語か識別する
         {
             case "Japanese"://日本語を選んでいるなら

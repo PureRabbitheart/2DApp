@@ -121,6 +121,7 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 c7596548f833c0a2bf641cb4985f0213 Assembly-CSharp.dll:.MixerManager
+4d47fb22da6ae928b27f5f05fbdd1142 Assembly-CSharp.dll:.GachaPerfomanceManager
 ad4fb883abfa6855ede4cf63ccbba3ee Assembly-CSharp.dll:.LanguageManager
 2aa0a05f178e39b2dc67e2af4dc15949 Assembly-CSharp.dll:.NextScene
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -177,9 +178,11 @@ dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 cd8c2d2b345ae51dcee66601c29aa055 Assembly-CSharp.dll:.TitleManager
-40941560724bb95988e721d6f4accb95 Assembly-CSharp.dll:.SelectManager
+2e3380752443c131a5261aeaa4e431f5 Assembly-CSharp.dll:.SelectManager
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-13f7169d7b87367100a5aa5193f8335b Assembly-CSharp.dll:.GachaPerfomanceManager
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.StageInfo
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.ActionPointManager
+d935d077e966f3596473fce4afead8c1 Assembly-CSharp.dll:.ActionPointUIManager

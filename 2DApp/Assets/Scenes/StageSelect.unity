@@ -394,7 +394,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 133397961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983514540}
+        m_MethodName: StageSelectBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &133397961
@@ -706,7 +717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -550}
+  m_AnchoredPosition: {x: 0, y: -545}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241497460
@@ -872,8 +883,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -1054,7 +1065,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 262840040}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983514540}
+        m_MethodName: PlayScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &262840040
@@ -1162,10 +1184,10 @@ RectTransform:
   m_Father: {fileID: 786270581}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -37.3}
-  m_SizeDelta: {x: 0, y: 802.6}
+  m_SizeDelta: {x: 720, y: 802.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333973199
 MonoBehaviour:
@@ -1179,7 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.59284186, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1694,7 +1716,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1747,6 +1769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531964112}
   - component: {fileID: 531964113}
+  - component: {fileID: 531964114}
   m_Layer: 5
   m_Name: AP
   m_TagString: Untagged
@@ -1824,6 +1847,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &531964114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531964111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557d3eb1d7cceec448a962e88b537124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pAPManager: {fileID: 983514541}
+  recoveryTimeLabel: {fileID: 2093153022}
+  pStatusLabel: {fileID: 885297073}
+  APBar: {fileID: 531964113}
 --- !u!1 &534164607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2122,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -497}
-  m_SizeDelta: {x: 800, y: 220}
+  m_SizeDelta: {x: 720, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616147817
 MonoBehaviour:
@@ -2342,8 +2380,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -2892,6 +2930,7 @@ GameObject:
   - component: {fileID: 983514539}
   - component: {fileID: 983514538}
   - component: {fileID: 983514540}
+  - component: {fileID: 983514541}
   m_Layer: 0
   m_Name: SelectManager
   m_TagString: Untagged
@@ -2947,8 +2986,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51b28ad87d409240b6c6a6ff21db413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoText: {fileID: 0}
+  eSceneMode: 0
+  pAPManager: {fileID: 983514541}
+  InfoText: {fileID: 1559600739}
   LemonText: {fileID: 1238684007}
+  StageInfoFile: {fileID: 4900000, guid: 163a7c3cde1807545a1b1fa3ddf1d006, type: 3}
+  gStageInfo: {fileID: 330685082}
+--- !u!114 &983514541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983514537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7d47520b8917640bfeefcfe36d2de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1006114346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,7 +3866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239, y: -551}
+  m_AnchoredPosition: {x: -250, y: -545}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274122166
@@ -4330,7 +4384,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -47}
-  m_SizeDelta: {x: 800, y: 200}
+  m_SizeDelta: {x: 720, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411192838
 MonoBehaviour:
@@ -4402,7 +4456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 255, y: -553}
+  m_AnchoredPosition: {x: 250, y: -545}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437099758
@@ -4582,6 +4636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452998657}
+  - component: {fileID: 1452998658}
   m_Layer: 5
   m_Name: APFont
   m_TagString: Untagged
@@ -4609,6 +4664,19 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1452998658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452998656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40a0234abcbf8a459468e75073d440b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Japanese: {fileID: 1177699998}
+  English: {fileID: 768367809}
 --- !u!1 &1546157663
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,6 +4690,7 @@ GameObject:
   - component: {fileID: 1546157667}
   - component: {fileID: 1546157666}
   - component: {fileID: 1546157669}
+  - component: {fileID: 1546157670}
   - component: {fileID: 1546157665}
   m_Layer: 5
   m_Name: Stage1
@@ -4665,7 +4734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 60
+  m_MinHeight: 80
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -4712,7 +4781,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 983514540}
-        m_MethodName: StageInfo
+        m_MethodName: StageInfoRender
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4773,6 +4842,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Japanese: {fileID: 449550323}
   English: {fileID: 4488351}
+--- !u!114 &1546157670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546157663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af1e8e5c87eac14eac51404cebb7f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1559600737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5077,7 +5157,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 534164608}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

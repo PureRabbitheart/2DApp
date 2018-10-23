@@ -20,8 +20,9 @@ public class GameSetting
         PlayerPrefs.SetFloat("BGMVolume", 5f);//BGMの音量のデータ作成
         PlayerPrefs.SetFloat("SEVolume", 5f);//SEの音量のデータ作成
         PlayerPrefs.SetInt("Lemon", 0);//レモンの数
+        PlayerPrefs.SetInt("AP", 20);//AP
         PlayerPrefs.SetString("Language", "Japanese");//言語設定
-
+        PlayerPrefs.SetString("RcoveryTime", DateTime.Now.ToString());
         Debug.Log("ゲームの設定を初期化しました");
     }
 

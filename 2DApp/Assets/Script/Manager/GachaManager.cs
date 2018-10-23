@@ -37,7 +37,6 @@ public class GachaManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        PlayerPrefs.SetInt("Lemon", 5);
         LemonValueUpdate();
     }
 

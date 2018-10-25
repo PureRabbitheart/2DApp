@@ -10,6 +10,8 @@ public class Gachatest : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI debug;
 
+    private int GachaCount;
+    private int MaxCount = 110;
 
     // Use this for initialization
     void Start()
@@ -23,27 +25,31 @@ public class Gachatest : MonoBehaviour
 
     }
 
-    public void Gacha()
+    public void Gacha(int value)
     {
-        debug.text = Gacha(Random.Range(0.000f, 1.0f));
-        Debug.Log(debug.text);
+        for (int i = 0; i < value; i++)
+        {
+            debug.text = Gacha(Random.Range(0.000f, 1.0f));
+            Debug.Log(debug.text);
+            GachaCount++;
+        }
+
     }
+
+
 
     string Gacha(float probability)
     {
-        if (probability < 0.01f)//0.01
+        if (probability < 0.01f || GachaCount > MaxCount)//0.01
         {
-            return "大当たり_SSR";
+            GachaCount = 0;
+            return "大当たり_★5";
         }
         if (probability < 0.11f)//0.1
         {
-            return "中あたり_SR";
+            return "あたり_★4";
         }
-        if (probability < 0.41f)//0.3
-        {
-            return "あたり_R";
-        }
-        return "はずれ";
+        return "はずれ_★3";
 
     }
 }

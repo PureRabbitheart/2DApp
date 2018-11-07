@@ -6,7 +6,7 @@ public class ActionPointManager : MonoBehaviour
 {
 
     
-    const int recoveryUnitSeconds = 10;// 1ActionPoint回復をするのに必要な時間
+    const int recoveryUnitSeconds = 180;// 1ActionPoint回復をするのに必要な時間
 
     public int nowPoint { get; private set; }//現在のAP数
     public int maxPoint { get; private set; }

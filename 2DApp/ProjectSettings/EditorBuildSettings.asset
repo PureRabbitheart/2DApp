@@ -15,15 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/StageSelect.unity
     guid: 8d73297d265228d489a8e245cf37d18f
   - enabled: 1
-    path: Assets/Scenes/Stage/Stage1.unity
-    guid: 360e516e32c16974fbc48e4e9bf65430
-  - enabled: 1
-    path: Assets/Scenes/Stage/Stage2.unity
-    guid: 06402ed21818d5547aa08adfbd82f997
-  - enabled: 1
     path: Assets/Scenes/Gacha.unity
     guid: 3558819a7401aa24cb35eeb38ab4ab4a
   - enabled: 1
     path: Assets/Scenes/GachaPerformance.unity
     guid: db019c785f84bcd498961669f2ce2eee
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage1.unity
+    guid: badaf650c079b4049a35afb9449ac60c
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage2.unity
+    guid: e344f3e8a8d16664096907a3129e06a1
+  - enabled: 1
+    path: Assets/Scenes/test/test.unity
+    guid: 847d7b8f9f20db84cadf5bfd598a7a36
   m_configObjects: {}

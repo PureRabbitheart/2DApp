@@ -125,4 +125,17 @@ public class TitleManager : MonoBehaviour
             }
         }
     }
+
+    public void SettingReset()
+    {
+        PlayerPrefs.DeleteAll();
+
+        PlayerPrefsX.SetBool("InitActive", false);//初期起動のフラグ
+        PlayerPrefs.SetFloat("BGMVolume", 5f);//BGMの音量のデータ作成
+        PlayerPrefs.SetFloat("SEVolume", 5f);//SEの音量のデータ作成
+        PlayerPrefs.SetInt("Lemon", 0);//レモンの数
+        PlayerPrefs.SetInt("AP", 20);//AP
+        PlayerPrefs.SetString("Language", "Japanese");//言語設定
+        PlayerPrefs.SetString("RcoveryTime", System.DateTime.Now.ToString());
+    }
 }

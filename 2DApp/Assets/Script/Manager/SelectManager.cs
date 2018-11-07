@@ -29,7 +29,8 @@ public class SelectManager : MonoBehaviour
     private TextAsset StageInfoFile;//ステージの情報が入ったファイル
     [SerializeField]
     private GameObject gStageInfo;//ステージの情報ウィンドウ
-
+    [SerializeField]
+    private NextScene pNextScene;
 
 
     private List<string[]> StageInfoList = new List<string[]>();//ステージ情報を管理するリスト
@@ -72,7 +73,7 @@ public class SelectManager : MonoBehaviour
         {
             PlayerPrefs.SetString("RcoveryTime", System.DateTime.Now.ToString());
             PlayerPrefs.SetInt("AP", pAPManager.nowPoint);
-            //それにあったStageをロードするPlayStageNum
+            pNextScene.StageScene(PlayStageNum);
             Debug.Log("ロード");
         }
         else

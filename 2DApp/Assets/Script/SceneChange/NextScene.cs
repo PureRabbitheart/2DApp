@@ -20,6 +20,9 @@ public class NextScene : MonoBehaviour
     private SceneObject GachaSceneObject;
     [SerializeField]
     private SceneObject GachaPerfomanceSceneObject;
+    [SerializeField]
+    private SceneObject GaScene;
+
 
     public void TitleScene()//タイトルシーン遷移
     {
@@ -45,6 +48,11 @@ public class NextScene : MonoBehaviour
     public void PerfomanceScene()//ガチャシーン遷移
     {
         LoadScene(GachaPerfomanceSceneObject, 0.0f);
+    }
+
+    public void GAScene()//タイトルシーン遷移
+    {
+        LoadScene(GaScene.name(), 0.0f);
     }
 
     public void LoadScene(string scene, float interval)
